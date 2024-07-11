@@ -26,7 +26,7 @@ public class ObstacleMovement : MonoBehaviour
 
     void ScoreRaycast()
     {
-        RaycastHit2D hit = Physics2D.Raycast(raycastPos.position, Vector2.down, playerLayer);
+        RaycastHit2D hit = Physics2D.Raycast(raycastPos.position, Vector2.down, raycastHeight,playerLayer);
 
         if(hit && rayCalled == false)
         {
