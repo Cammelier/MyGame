@@ -17,8 +17,8 @@
                 {
                     "name": "touchPress",
                     "type": "Value",
-                    "id": "08b47f81-19c7-4838-a6c1-693f6b244ffe",
-                    "expectedControlType": "Touch",
+                    "id": "48cb8404-0391-4373-b43e-d9c1ffe67838",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
@@ -38,8 +38,8 @@
                 },
                 {
                     "name": "",
-                    "id": "7f4bff77-dcb5-4465-a78e-8533d0402d83",
-                    "path": "<Touchscreen>/primaryTouch",
+                    "id": "69aaeb87-f978-4b0c-8963-f52420597a25",
+                    "path": "<Touchscreen>/Press",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
