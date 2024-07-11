@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,7 @@ using UnityEngine.UIElements;
 
 public class player : MonoBehaviour
 {
+    public Boolean isDead;
     public float jumpForce = 4f;
     Rigidbody2D rb;
     // Start is called before the first frame update
@@ -16,7 +18,11 @@ public class player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        playerJump();
+        if (isDead == false)
+        {
+            playerJump();
+        }
+
     }
 
     public void playerJump()
@@ -25,5 +31,16 @@ public class player : MonoBehaviour
         {
             rb.velocity = jumpForce * Vector2.up;
         }
+    }
+
+    void destroyPlayer()
+    {
+        Destroy(gameObject);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        isDead = true;
+        Time.timeScale = 0;
     }
 }

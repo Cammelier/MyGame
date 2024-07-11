@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 12995560}
   - component: {fileID: 12995564}
   - component: {fileID: 12995565}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Bat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -175,9 +175,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.07, y: 0.15}
+  m_Offset: {x: 0.06, y: 0.15}
   serializedVersion: 2
-  m_Radius: 0.3
+  m_Radius: 0.25
 --- !u!50 &12995561
 Rigidbody2D:
   serializedVersion: 4
@@ -305,6 +305,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b1568edac158a740910e066aed33fb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDead: 0
   jumpForce: 4
 --- !u!1 &203656285
 GameObject:
@@ -490,6 +491,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 363685821}
+  - component: {fileID: 363685822}
   m_Layer: 0
   m_Name: gamemanager
   m_TagString: Untagged
@@ -512,6 +514,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &363685822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 363685820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 036f256aee8142940af4d70c75f11dba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreText: {fileID: 1091291146}
 --- !u!1 &433392366
 GameObject:
   m_ObjectHideFlags: 0
@@ -1460,7 +1475,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &744593164
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1540,7 +1555,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &774754294
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2773,7 +2788,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1670647831
 MonoBehaviour:
   m_ObjectHideFlags: 0
