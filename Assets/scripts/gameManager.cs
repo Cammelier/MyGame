@@ -13,7 +13,7 @@ public class gameManager : MonoBehaviour
 
     int score, bestscore;
     public bool gamePlayed;
-
+    bool recordsoundPlayed;
    
     private void Awake()
     {
@@ -33,7 +33,15 @@ public class gameManager : MonoBehaviour
     public void ScoreUpdate()
     {
         score++;
-        scoreText.text = score.ToString();  
+        scoreText.text = score.ToString();
+        
+        if(score >= bestscore){
+            if(recordsoundPlayed == false)
+            {
+                audioManager.instance.PlayRecord();
+                recordsoundPlayed = true;
+            }
+        }
     }
 
     public void DisplayDeathPanel()

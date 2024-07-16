@@ -10,6 +10,7 @@ public class player : MonoBehaviour
     public float jumpForce = 4f;
     Rigidbody2D rb;
     Animator anim;
+    bool deathSoundPlayed;
 
     public GameObject retryButton, inGameScore;
     // Start is called before the first frame update
@@ -28,7 +29,14 @@ public class player : MonoBehaviour
         }
         else
         {
-            anim.SetTrigger("Death");
+            if (deathSoundPlayed == false)
+            {
+                anim.SetTrigger("Death");
+                audioManager.instance.Playdeath();
+                audioManager.instance.Playgameover();
+                deathSoundPlayed = true;
+            }
+            
             gameManager.instance.DisplayDeathPanel();
         }
 
@@ -36,13 +44,14 @@ public class player : MonoBehaviour
 
     public void playerJump()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && gameManager.instance.gamePlayed == true)
         {
             rb.velocity = jumpForce * Vector2.up;
+            audioManager.instance.PlayFly();
         }
     }
 
-    void destroyPlayer()
+    void DestroyPlayer()
     {
         Destroy(gameObject);
         inGameScore.SetActive(false);   

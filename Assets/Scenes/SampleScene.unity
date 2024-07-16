@@ -532,7 +532,7 @@ MonoBehaviour:
   scoreNumber: {fileID: 531133619}
   bestNumber: {fileID: 1410715948}
   scorePanel: {fileID: 744593163}
-  playButton: {fileID: 0}
+  playButton: {fileID: 774754293}
   gamePlayed: 0
 --- !u!1 &433392366
 GameObject:
@@ -671,6 +671,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 507120998}
+  - component: {fileID: 507120999}
   m_Layer: 0
   m_Name: audiomanager
   m_TagString: Untagged
@@ -699,6 +700,24 @@ Transform:
   - {fileID: 679275377}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &507120999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 507120997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16f53405bd0caa44caf936524de9103b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backgroundmusic: {fileID: 289522081}
+  click: {fileID: 1455248849}
+  death: {fileID: 433392368}
+  fly: {fileID: 1464497225}
+  gameover: {fileID: 1444029748}
+  record: {fileID: 679275378}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1630,6 +1649,18 @@ MonoBehaviour:
       - m_Target: {fileID: 363685822}
         m_TargetAssemblyTypeName: gameManager, Assembly-CSharp
         m_MethodName: PlayButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 507120999}
+        m_TargetAssemblyTypeName: audioManager, Assembly-CSharp
+        m_MethodName: PlayClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3214,6 +3245,18 @@ MonoBehaviour:
       - m_Target: {fileID: 363685822}
         m_TargetAssemblyTypeName: gameManager, Assembly-CSharp
         m_MethodName: RetryButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 507120999}
+        m_TargetAssemblyTypeName: audioManager, Assembly-CSharp
+        m_MethodName: PlayClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
