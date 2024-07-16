@@ -2,20 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class gameManager : MonoBehaviour
 {
     public static gameManager instance;
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI scoreNumber, bestNumber;
-    public GameObject scorePanel;
+    public GameObject scorePanel, playButton;
 
     int score, bestscore;
+    public bool gamePlayed;
 
    
     private void Awake()
     {
         instance = this;
+        Time.timeScale = 0;
 
         if (PlayerPrefs.HasKey("BestScore"))
         {
@@ -23,7 +26,7 @@ public class gameManager : MonoBehaviour
         }
         else
         {
-            bestscore = 0;
+            bestscore = 0; 
         }
     }
 
@@ -43,5 +46,17 @@ public class gameManager : MonoBehaviour
         {
             PlayerPrefs.SetInt("BestScore",score);
         }
+    }
+
+    public void PlayButton()
+    {
+        Time.timeScale = 1; 
+        playButton.SetActive(false);
+        gamePlayed = true;
+    }
+
+    public void RetryButton()
+    {
+        SceneManager.LoadScene(0);
     }
 }

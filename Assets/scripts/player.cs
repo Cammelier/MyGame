@@ -9,10 +9,14 @@ public class player : MonoBehaviour
     public Boolean isDead;
     public float jumpForce = 4f;
     Rigidbody2D rb;
+    Animator anim;
+
+    public GameObject retryButton, inGameScore;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        anim= GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -24,6 +28,7 @@ public class player : MonoBehaviour
         }
         else
         {
+            anim.SetTrigger("Death");
             gameManager.instance.DisplayDeathPanel();
         }
 
@@ -40,6 +45,8 @@ public class player : MonoBehaviour
     void destroyPlayer()
     {
         Destroy(gameObject);
+        inGameScore.SetActive(false);   
+        retryButton.SetActive(true);   
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
