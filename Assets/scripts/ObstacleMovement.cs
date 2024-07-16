@@ -15,7 +15,7 @@ public class ObstacleMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += moveSpeed * Time.deltaTime * Vector3.left;
+        transform.position += moveSpeed*Time.deltaTime*Vector3.left;
         ScoreRaycast();
     }
 

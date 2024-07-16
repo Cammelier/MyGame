@@ -22,6 +22,10 @@ public class player : MonoBehaviour
         {
             playerJump();
         }
+        else
+        {
+            gameManager.instance.DisplayDeathPanel();
+        }
 
     }
 
