@@ -20,7 +20,7 @@ public class PlayFabManager : MonoBehaviour
             Password = passwordInput.text,
             RequireBothUsernameAndEmail = false
         };
-        PlayFabClientAPI.RegisterPlayFabUser(request, OnRegisterSuccess, OnError);
+       // PlayFabClientAPI.RegisterPlayFabUser(request, OnRegisterSuccess);
     }
 
     void OnRegisterSuccess(RegisterPlayFabUserRequest result)
