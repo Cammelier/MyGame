@@ -4,6 +4,7 @@ using UnityEngine;
 using PlayFab;
 using PlayFab.ClientModels;
 using UnityEngine.UI;
+using System;
 
 public class PlayFabManager : MonoBehaviour
 {
@@ -20,12 +21,21 @@ public class PlayFabManager : MonoBehaviour
             Password = passwordInput.text,
             RequireBothUsernameAndEmail = false
         };
-       // PlayFabClientAPI.RegisterPlayFabUser(request, OnRegisterSuccess);
+
+        PlayFabClientAPI.RegisterPlayFabUser(request, OnRegisterSuccess, OnError);
     }
 
-    void OnRegisterSuccess(RegisterPlayFabUserRequest result)
+    private void OnError(PlayFabError error)
+    {
+
+    }
+
+    private void OnRegisterSuccess(RegisterPlayFabUserResult result)
     {
         messageText.text = "registered and logged in";
-
     }
+
+  
+
+    
 }
