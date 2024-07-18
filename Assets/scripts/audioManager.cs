@@ -6,7 +6,7 @@ public class audioManager : MonoBehaviour
 {
     // Start is called before the first frame update
    public static audioManager instance;
-    public AudioSource backgroundmusic, click, death, fly, gameover, record;
+    public AudioSource backgroundmusic, click, death, fly, record;
 
     private void Awake()
     {
@@ -31,19 +31,12 @@ public class audioManager : MonoBehaviour
         record.Play();
     }
 
-    public void Playgameover()
-    {
-        StartCoroutine(GameOverSound());    
-    }
+    
 
     public void StopGameMusic()
     {
         backgroundmusic.Stop(); 
     }
 
-    IEnumerator GameOverSound()
-    {
-        yield return new WaitForSecondsRealtime(1.5f);
-        gameover.Play();
-    }
+   
 }

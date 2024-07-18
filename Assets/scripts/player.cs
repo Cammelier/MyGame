@@ -33,7 +33,6 @@ public class player : MonoBehaviour
             {
                 anim.SetTrigger("Death");
                 audioManager.instance.Playdeath();
-                audioManager.instance.Playgameover();
                 deathSoundPlayed = true;
             }
             
