@@ -67,4 +67,9 @@ public class gameManager : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
+
+    public void OptionsButton()
+    {
+        SceneManager.LoadScene(1);
+    }
 }

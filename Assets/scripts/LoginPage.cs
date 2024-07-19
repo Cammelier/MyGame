@@ -49,7 +49,7 @@ public class LoginPagePlayFab : MonoBehaviour
 
             RequireBothUsernameAndEmail = false
         };
-        PlayFabClientAPI.RegisterPlayFabUser(request, OnRegisterSuccess, OnError);
+        PlayFabClientAPI.RegisterPlayFabUser(request, OnRegisterSuccess, OnErrorRecovery);
     }
 
     public void Login() 
@@ -60,12 +60,36 @@ public class LoginPagePlayFab : MonoBehaviour
             Password = PasswordLoginInput.text,
         };
 
-        PlayFabClientAPI.LoginWithEmailAddress(request, OnLoginSuccess, OnError)
+        PlayFabClientAPI.LoginWithEmailAddress(request, OnLoginSuccess, OnError);
     }
 
     private void OnLoginSuccess(LoginResult result)
     {
         MessageText.text = "Loggin in";
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void RecoverUser()
+    {
+        var request = new SendAccountRecoveryEmailRequest
+        {
+
+            Email = EmailLoginInput.text,
+            TitleId = "D243F",
+        };
+
+        PlayFabClientAPI.SendAccountRecoveryEmail(request, OnRecoverySuccess, OnErrorRecovery);
+    }
+
+    private void OnErrorRecovery(PlayFabError result)
+    {
+        MessageText.text = "No email found";
+    }
+
+    private void OnRecoverySuccess(SendAccountRecoveryEmailResult result)
+    {
+        OpenLoginPage();
+        MessageText.text = "Recovery mail sent";
     }
 
     private void OnError(PlayFabError Error)
