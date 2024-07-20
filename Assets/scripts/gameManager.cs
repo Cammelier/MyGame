@@ -65,7 +65,7 @@ public class gameManager : MonoBehaviour
 
     public void RetryButton()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 
     public void OptionsButton()
