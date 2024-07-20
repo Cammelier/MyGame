@@ -43,7 +43,7 @@ public class player : MonoBehaviour
 
     public void playerJump()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && gameManager.instance.gamePlayed == true)
+        if (Input.GetMouseButtonDown(0) && gameManager.instance.gamePlayed == true)
         {
             rb.velocity = jumpForce * Vector2.up;
             audioManager.instance.PlayFly();
