@@ -6,9 +6,10 @@ public class keyboardManager : MonoBehaviour
 {
 
     private TouchScreenKeyboard keyboard;
+    public static string Keyboardtext = "";
 
     public void OpenKeyboard()
     {
-        keyboard = TouchScreenKeyboard.Open("", TouchScreenKeyboardType.Default);
+        keyboard = TouchScreenKeyboard.Open("");
     }
 }
