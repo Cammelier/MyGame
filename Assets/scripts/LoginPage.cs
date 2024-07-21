@@ -27,6 +27,8 @@ public class LoginPagePlayFab : MonoBehaviour
     [SerializeField] TMP_InputField EmailRecoveryInput;
     [SerializeField] GameObject RecoveryPage;
 
+    
+
     void Start()
     {
         
@@ -50,6 +52,8 @@ public class LoginPagePlayFab : MonoBehaviour
             RequireBothUsernameAndEmail = false
         };
         PlayFabClientAPI.RegisterPlayFabUser(request, OnRegisterSuccess, OnErrorRecovery);
+
+       
     }
 
     public void Login() 
@@ -61,6 +65,7 @@ public class LoginPagePlayFab : MonoBehaviour
         };
 
         PlayFabClientAPI.LoginWithEmailAddress(request, OnLoginSuccess, OnError);
+        
     }
 
     private void OnLoginSuccess(LoginResult result)
@@ -79,6 +84,7 @@ public class LoginPagePlayFab : MonoBehaviour
         };
 
         PlayFabClientAPI.SendAccountRecoveryEmail(request, OnRecoverySuccess, OnErrorRecovery);
+       
     }
 
     private void OnErrorRecovery(PlayFabError result)
